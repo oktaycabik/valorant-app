@@ -6,7 +6,8 @@
   "scripts": {
     "test": "This is a test",
     "start": "webpack-dev-server --output-public-path=/bundles/ --open",
-    "build": "webpack --progress"
+    "build": "webpack --progress",
+    "heroku-prebuild": "npm install --dev"
   },
   "keywords": [
     "employee",
