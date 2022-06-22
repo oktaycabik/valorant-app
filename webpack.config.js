@@ -22,7 +22,7 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 3100,
-    index: 'index.html'
+    port: process.env.PORT || 3200,
+  
   }
 };
