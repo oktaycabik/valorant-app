@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "This is a test",
-    "start": "webpack-dev-server --output-public-path=/bundles/ --open",
+    "start": "webpack-dev-server --output-public-path=/bundles/ --port 3200 --open",
     "build": "webpack --progress",
     "heroku-prebuild": "npm install --dev"
   },

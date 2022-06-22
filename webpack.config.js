@@ -24,6 +24,6 @@ module.exports = {
     ],
   },
   devServer: {
-    port: process.env.PORT || 3200,
+    port: process.env.PORT,
   },
 };
