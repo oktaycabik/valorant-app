@@ -1,9 +1,10 @@
 import { Error404Screen } from "./Error404Screen";
 import { HomeScreen } from "./HomeScreen";
 import { PostScreen } from "./PostScreen";
-import { Request } from "./request";
+
 import { parseRequestUrl } from "./utils";
-const request = new Request("http://localhost:5000/api/post");
+
+
 const routes={
     "/":HomeScreen,
     "post/:id":PostScreen
@@ -18,7 +19,7 @@ const getAllPost =async()=>{
     const screen=routes[parseUrl]? routes[parseUrl]:Error404Screen
     const postList = document.getElementById("posts");
     postList.innerHTML=await screen.render()
-
+   console.log('process.env.PORT', process.env.PORT)
 }
 window.addEventListener("load",getAllPost)
 window.addEventListener("hashchange",getAllPost)
