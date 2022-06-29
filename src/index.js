@@ -5,9 +5,11 @@ import { HomeScreen } from "./HomeScreen";
 import { DetailsPage } from "./DetailsPage";
 
 import { parseRequestUrl } from "./utils";
+import { MainScreen } from "./MainScreen";
 
 
 const routes = {
+  "/":MainScreen,
   "agents": HomeScreen,
   "weapons": HomeScreen,
   "gear": HomeScreen,
