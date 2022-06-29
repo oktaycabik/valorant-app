@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "This is a test",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --output-public-path=/dist/  --mode development --open --hot",
     "build": "webpack --progress",
     "heroku-prebuild": "npm install --dev"
   },

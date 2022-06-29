@@ -5,10 +5,10 @@ export class Request {
   }
   get = async () => {
     const res = await axios(this.url);
-    return res.data.posts;
+    return res.data;
   };
   getById=async(id)=>{
     const res = await axios(this.url+"/"+id);
-    return res.data.post;
+    return res.data;
   }
 }

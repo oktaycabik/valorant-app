@@ -8,7 +8,7 @@ module.exports = {
     filename: "bundle.js",
   },
   plugins: [new Dotenv()],
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
@@ -25,6 +25,7 @@ module.exports = {
   },
 
   devServer: {
-    port: process.env.PORT,
+    port: 3200,
+    index: 'index.html'
   },
 };

@@ -1,19 +1,32 @@
 import { Request } from "./request";
-const request = new Request("http://localhost:5000/api/post");
+import { parseRequestUrl } from "./utils";
+
 
 export const HomeScreen = {
   render: async () => {
-    const posts = await request.get();
+    const req = parseRequestUrl();
+    const request = new Request(`https://valorant-api.com/v1/${req.resource}`);
+    const { data } = await request.get();
+    
 
-    return posts.map(
-      (post) => `
-         <div class="col-2">
-         <div class="card">
-         <a href="/#/post/${post?._id}">sadsad</a>
-            <div class="card-title">${post?.content}</div>
-         </div>
-        </div> 
+    return `
+    
+    ${data.map(
+      (data) =>
         `
-    ).join('\n');
+        <div class="col-lg-3 mt-3">
+          <div class="card" style="width: 18rem;">
+            <img src="${data.displayIcon}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${data.displayName}</h5>
+              <p class="card-text">${data.description? data.description : ""}</p>
+              <a href="/#/${req.resource}/${data.uuid}" class="btn btn-danger">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        `
+    ) .join('\n')}
+
+    `;
   },
 };
