@@ -1,9 +1,9 @@
 import { parseRequestUrl } from "./utils";
 import { Request } from "./request";
-export const DetailsPage = {
+export const AgentDetailPage = {
   render: async () => {
     const req = parseRequestUrl();
-    const request = new Request(`https://valorant-api.com/v1/${req.resource}`);
+    const request = new Request(`https://valorant-api.com/v1/agents`);
 
     const { data } = await request.getById(req.id);
 
@@ -24,15 +24,21 @@ export const DetailsPage = {
         }" class="card-img-top" alt="...">
         </div>
         <div class="card-body">
-          <h5 class="card-title">${data?.displayName ?data.displayName:""}</h5>
-          <p class="card-text">${data.description ? data.description : ""}</p>
+          <h5 class="card-title text-danger">${
+            data?.displayName }</h5>
+          <p class="card-text">${data.description}</p>
           <p class="card-text">${
-            data.developerName ? data.developerName : ""
+            data.developerName
           }</p>
           <p class="card-text">${
-            data?.role?.displayName ? data?.role?.displayName : ""
+            data?.role?.displayName
           }</p>
-          <h5 class="card-title">Abilities</h5>
+          <div class="row">
+          <div class="col">
+          <h5 class="card-title text-danger">Abilities</h5>
+  
+        
+         
           ${
             data?.abilities
               ? data?.abilities
@@ -47,7 +53,17 @@ export const DetailsPage = {
                   .join("\n")
               : ""
           }
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          
+          
+          </div>
+          <div class="col">
+          <h5 class="card-title text-danger">Role</h5>
+          <div className="card-text">${data?.role.displayName}</div>
+          <div className="card-text">${data?.role.description}</div>
+          </div>
+          
+          
+        
         </div>
       </div>
         `;

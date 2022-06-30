@@ -2,10 +2,14 @@ import { Error404Screen } from "./Error404Screen";
 
 import { HeaderCompenent } from "./HeaderCompenent";
 import { HomeScreen } from "./HomeScreen";
-import { DetailsPage } from "./DetailsPage";
+
 
 import { parseRequestUrl } from "./utils";
 import { MainScreen } from "./MainScreen";
+import { AgentDetailPage } from "./AgentDetailsPage";
+import { WeaponDetailPage } from "./WeaponDetailsPage";
+import { GearDetailPage } from "./GearDetailPage";
+import { MapDetailPage } from "./MapDetailsPage";
 
 
 const routes = {
@@ -14,10 +18,10 @@ const routes = {
   "weapons": HomeScreen,
   "gear": HomeScreen,
   "maps": HomeScreen,
-  "agents/:id": DetailsPage,
-  "weapons/:id": DetailsPage,
-  "gear/:id": DetailsPage,
-  "maps/:id": DetailsPage,
+  "agents/:id": AgentDetailPage,
+   "weapons/:id": WeaponDetailPage,
+   "gear/:id": GearDetailPage,
+   "maps/:id": MapDetailPage,
 };
 
 const getAllPost = async () => {
