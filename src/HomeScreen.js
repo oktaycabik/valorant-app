@@ -13,7 +13,7 @@ export const HomeScreen = {
       .map(
         (data) =>
           `
-        <div class="col-lg-3 mt-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3">
           <div class="card" style="width: 18rem;">
             <img src="${data.displayIcon}" class="card-img-top p-2"  alt="...">
             <div class="card-body">
